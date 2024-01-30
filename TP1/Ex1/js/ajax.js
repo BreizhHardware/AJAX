@@ -1,4 +1,4 @@
-console.log("ajax.js.js chargé");
+console.log("ajax.js chargé");
 
 function ajaxRequest(type, url, callback){
     let xhr = new XMLHttpRequest();
