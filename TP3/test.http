@@ -1,0 +1,5 @@
+POST http://serveur-ajax-s3.felix/TP3/php/chat.php
+
+Content-Type: application/x-www-form-urlencoded
+
+request=messages&channel_id=1&userlogin=etudient0&message=Test%20Post

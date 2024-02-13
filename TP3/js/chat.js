@@ -67,7 +67,10 @@ function sendMessage(){
     let channelId = channelsList.options[channelsList.selectedIndex].value;
     const message = document.getElementById("message").value;
     document.getElementById("message").value = "";
-    ajaxRequest("POST", "http://serveur-ajax-s3.felix/TP3/php/chat.php?request=messages&channel_id=" + channelId + "&userlogin=etudiant0&message=" + message, getMessages, message);
+    if(message === ""){
+        return;
+    }
+    ajaxRequest("POST", "http://serveur-ajax-s3.felix/TP3/php/chat.php?request=messages", getMessages, "&channel_id=" + channelId + "&userlogin=etudiant0&message=" + message);
 }
 
 getChannels();

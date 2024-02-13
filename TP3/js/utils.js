@@ -1,9 +1,6 @@
 console.log("utils.js loaded");
 
 function ajaxRequest(type, url, callback=null, data=null){
-    console.log("ajaxRequest called");
-    console.log("type: " + type);
-    console.log("url: " + url);
     let xhr = new XMLHttpRequest();
     xhr.open(type, url, true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -11,9 +8,19 @@ function ajaxRequest(type, url, callback=null, data=null){
         switch (xhr.status){
             case 200:
             case 201:
-                let parsedResponse = JSON.parse(xhr.responseText);
-                if (callback){
-                    callback(parsedResponse);
+                if(xhr.responseText.trim() !== ''){
+                    try {
+                        let parsedResponse = JSON.parse(xhr.responseText);
+                        if (callback){
+                            callback(parsedResponse);
+                        }
+                    }
+                    catch (e){
+                        errorAlert("Erreur: " + e);
+                    }
+                }
+                else{
+                    errorAlert("Erreur: Aucune donnée reçue");
                 }
                 break;
             default:
