@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <style>
+      .message{
+        height: auto;
+        width: 100%;
+      }
+    </style>
+
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title -->
+    <title>Chat</title>
+
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
+    <!-- JS Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script> 
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="container">
+      <h1> Chat </h1>
+      <hr> 
+    </header>
+    
+    <!-- Errors -->
+    <section id="errors" class="container alert alert-danger d-none">
+    </section>
+    
+    <!-- Authentication -->
+    <section id="authentication" class="container d-none">
+      <h2>Authentification</h2>
+      <form id="authentication-send">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Login :</span>
+          </div>
+          <input type="text" class="form-control" placeholder="Entrez votre login" required autofocus>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Mot de passe :</span>
+          </div>
+          <input type="password" class="form-control" placeholder="Entrez votre mot de passe" required>
+        </div>
+        <div class="form-check float-right mt-2">
+          <input class="form-check-input" type="checkbox" value="">
+          <label class="form-check-label" for="stayconnect">
+            Rester connecté
+          </label>
+        </div>
+        <button type="submit" class="btn btn-success float-right mr-3 secon">
+          Se connecter
+        </button>
+        <button type="reset" class="btn btn-danger float-right mr-3">
+          Effacer
+        </button>
+      </form>
+    </section>
+
+    <!-- Chat -->
+    <section id="chat" class="container">
+      <form>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Canaux : </span>
+            </div>
+            <select class="form-control" id="channels-list">
+            </select>
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Rafraîchissement : </span>
+            </div>
+            <input type="text" class="form-control" placeholder="Entrez le délai de rafraîchissement" aria-label="Username" aria-describedby="basic-addon1">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">secondes : </span>
+            </div>
+          </div>
+          <div class="form-control" rows="10" id="chat-room" readonly style="height: 25rem">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Message > </span>
+            </div>
+            <input id="message" type="text" class="form-control" placeholder="Entrez votre message" required autofocus>
+        </div>
+        <button type="button" class="btn btn-secondary sedec">
+          Se déconnecter
+        </button>
+        <button type="submit" id="send-message" class="btn btn-success float-right">
+          Envoyer
+        </button>
+      </form>
+    </section>
+    <script src="js/utils.js"></script> 
+    <script src="js/chat.js"></script>
+  </body>
+</html>
