@@ -47,15 +47,10 @@ function displayMessages(messages){
     let chatRoom = document.getElementById("chat-room");
     chatRoom.innerHTML = "";
     if (messages.length === 0){
-        let messageDiv = document.createElement("div");
-        messageDiv.classList.add("message");
-        chatRoom.appendChild(messageDiv);
+        // No messages
     }else{
         messages.forEach(message => {
-            let messageDiv = document.createElement("div");
-            messageDiv.classList.add("message");
-            messageDiv.textContent = message.nickname + " : " + message.message;
-            chatRoom.appendChild(messageDiv);
+            chatRoom.value += message.nickname + ": " + message.message + "\n";
         });
     }
     chatRoom.scrollTop = chatRoom.scrollHeight;
