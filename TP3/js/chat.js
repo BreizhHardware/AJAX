@@ -45,7 +45,7 @@ function getMessages(){
 
 function displayMessages(messages){
     let chatRoom = document.getElementById("chat-room");
-    chatRoom.innerHTML = "";
+    chatRoom.value = "";
     if (messages.length === 0){
         // No messages
     }else{
